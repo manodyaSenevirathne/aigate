@@ -1,7 +1,7 @@
 package com.aigate.aigate_core.plugins;
 
-import com.aigate.plugin.Plugin;
-import com.aigate.plugin.PluginContext;
+import com.aigate.aigate_core.plugin.Plugin;
+import com.aigate.aigate_core.plugin.PluginContext;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
@@ -16,12 +16,14 @@ public class LoggingPlugin implements Plugin {
     }
 
     @Override
-    public void preRequest(ServerHttpRequest request, PluginContext context) {
+    public void preRequest(PluginContext context) {
+        ServerHttpRequest request = (ServerHttpRequest) context.get("request");
         System.out.println("[LoggingPlugin] Incoming: " + request.getURI());
     }
 
     @Override
-    public void preResponse(ServerHttpRequest request, ServerHttpResponse response, PluginContext context) {
-        System.out.println("[LoggingPlugin] Outgoing response" + response.getStatusCode());
+    public void preResponse(PluginContext context) {
+        ServerHttpResponse response = (ServerHttpResponse) context.get("response");
+        System.out.println("[LoggingPlugin] Outgoing response " + response.getStatusCode());
     }
 }

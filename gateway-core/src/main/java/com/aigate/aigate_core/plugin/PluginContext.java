@@ -1,4 +1,4 @@
-package com.aigate.plugin;
+package com.aigate.aigate_core.plugin;
 
 import java.util.HashMap;
 import java.util.Map;
