@@ -1,10 +1,9 @@
-package com.aigate.aigate_core.plugin;
+package com.aigate.aigate_core.core;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
-public class PluginContext {
+public class ReqResContext {
     private final Map<String, Object> attributes = new HashMap<>();
 
     public void put(String key, Object value) {

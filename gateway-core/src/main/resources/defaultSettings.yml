@@ -1,0 +1,4 @@
+aigate-config:
+  config:
+    rate-limiter.window-size-in-millis: 60000
+    rate-limiter.max-requests: 10

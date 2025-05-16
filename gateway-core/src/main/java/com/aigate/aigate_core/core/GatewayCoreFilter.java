@@ -1,7 +1,5 @@
-package com.aigate.aigate_core;
+package com.aigate.aigate_core.core;
 
-import com.aigate.aigate_core.plugin.PluginContext;
-import com.aigate.aigate_core.plugin.PluginExecutor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
@@ -23,11 +21,13 @@ public class GatewayCoreFilter implements WebFilter {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
-        PluginContext context = new PluginContext();
+        ReqResContext context = new ReqResContext();
         context.put("request", exchange.getRequest());
         context.put("response", exchange.getResponse());
 
         String ip = exchange.getRequest().getRemoteAddress().getAddress().getHostAddress();
+
+        // rate limiting
         if (!rateLimiter.isAllowed(ip)){
             ServerHttpResponse response = exchange.getResponse();
             response.setStatusCode(HttpStatus.TOO_MANY_REQUESTS); // 429

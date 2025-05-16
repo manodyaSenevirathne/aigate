@@ -1,22 +1,24 @@
-package com.aigate.aigate_core.plugin;
+package com.aigate.aigate_core.Registry;
+
+import com.aigate.aigate_core.interfaces.CorePlugin;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PluginRegistry {
-    private final List<Plugin> plugins = new ArrayList<>();
+    private final List<CorePlugin> plugins = new ArrayList<>();
 
-    public void registerPlugin(Plugin plugin) {
+    public void registerPlugin(CorePlugin plugin) {
         System.out.println("[PluginRegistry] Registering: " + plugin.name());
         plugins.add(plugin);
     }
 
-    public List<Plugin> getPlugins() {
+    public List<CorePlugin> getPlugins() {
         return plugins;
     }
 
-    public Plugin getPlugin(String name) {
-        for (Plugin plugin : plugins) {
+    public CorePlugin getPlugin(String name) {
+        for (CorePlugin plugin : plugins) {
             if (plugin.name().equals(name)) {
                 return plugin;
             }
