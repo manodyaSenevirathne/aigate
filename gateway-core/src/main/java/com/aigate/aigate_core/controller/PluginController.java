@@ -1,15 +1,13 @@
 package com.aigate.aigate_core.controller;
 
 import com.aigate.aigate_core.dto.PluginInfo;
-import com.aigate.aigate_core.interfaces.ExternalPlugin;
-import com.aigate.aigate_core.interfaces.ExternalPluginMetadata;
-import com.aigate.aigate_core.interfaces.Plugin;
+import com.aigate.aigate_core.models.ExternalPlugin;
+import com.aigate.aigate_core.models.ExternalPluginMetadata;
 import com.aigate.aigate_core.plugin.PluginRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/plugins")

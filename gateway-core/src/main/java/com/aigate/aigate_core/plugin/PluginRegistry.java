@@ -1,8 +1,8 @@
 package com.aigate.aigate_core.plugin;
 
 import com.aigate.aigate_core.interfaces.CorePlugin;
-import com.aigate.aigate_core.interfaces.ExternalPlugin;
 import com.aigate.aigate_core.interfaces.Plugin;
+import com.aigate.aigate_core.models.ExternalPlugin;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.aigate.aigate_core.interfaces;
+package com.aigate.aigate_core.models;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
