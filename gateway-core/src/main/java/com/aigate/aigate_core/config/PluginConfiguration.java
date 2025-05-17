@@ -1,7 +1,7 @@
 package com.aigate.aigate_core.config;
 
 import com.aigate.aigate_core.interfaces.CorePlugin;
-import com.aigate.aigate_core.Registry.PluginRegistry;
+import com.aigate.aigate_core.plugin.PluginRegistry;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

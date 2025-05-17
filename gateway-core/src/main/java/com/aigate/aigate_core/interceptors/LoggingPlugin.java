@@ -1,6 +1,6 @@
-package com.aigate.aigate_core.plugins;
+package com.aigate.aigate_core.interceptors;
 
-import com.aigate.aigate_core.core.ReqResContext;
+import com.aigate.aigate_core.models.ReqResContext;
 import com.aigate.aigate_core.interfaces.CorePlugin;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -16,13 +16,13 @@ public class LoggingPlugin implements CorePlugin {
     }
 
     @Override
-    public void preRequest(ReqResContext context) {
+    public void request(ReqResContext context) {
         ServerHttpRequest request = (ServerHttpRequest) context.get("request");
         System.out.println("[LoggingPlugin] Incoming: " + request.getURI());
     }
 
     @Override
-    public void preResponse(ReqResContext context) {
+    public void response(ReqResContext context) {
         ServerHttpResponse response = (ServerHttpResponse) context.get("response");
         System.out.println("[LoggingPlugin] Outgoing response " + response.getStatusCode());
     }

@@ -1,7 +1,7 @@
-package com.aigate.aigate_core.core;
+package com.aigate.aigate_core.plugin;
 
-import com.aigate.aigate_core.interfaces.CorePlugin;
-import com.aigate.aigate_core.Registry.PluginRegistry;
+import com.aigate.aigate_core.models.ReqResContext;
+import com.aigate.aigate_core.interfaces.Plugin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,19 +16,19 @@ public class PluginExecutor {
     }
 
     public void executePreRequest(ReqResContext context) {
-        for (CorePlugin plugin : pluginRegistry.getPlugins()) {
-            plugin.preRequest(context);
+        for (Plugin plugin : pluginRegistry.getPlugins()) {
+            plugin.request(context);
         }
     }
 
     public void executePostRequest(ReqResContext context) {
-        for (CorePlugin plugin : pluginRegistry.getPlugins()) {
-            plugin.preResponse(context);
+        for (Plugin plugin : pluginRegistry.getPlugins()) {
+            plugin.response(context);
         }
     }
 
     public void executeOnError(Throwable error, ReqResContext context) {
-        for (CorePlugin plugin : pluginRegistry.getPlugins()) {
+        for (Plugin plugin : pluginRegistry.getPlugins()) {
             plugin.onError(error, context);
         }
     }

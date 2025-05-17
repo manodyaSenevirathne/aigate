@@ -1,4 +1,4 @@
-package com.aigate.aigate_core.core;
+package com.aigate.aigate_core.models;
 
 import java.util.HashMap;
 import java.util.Map;
