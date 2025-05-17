@@ -16,12 +16,12 @@ public class AigateCoreApplication {
 		SpringApplication.run(AigateCoreApplication.class, args);
 
 
-		Payload payload = new Payload();
-		payload.setBody("Sample input");
-
-		Payload response = Sender.sendPayload("127.0.0.1", 7070, payload);
-
-		System.out.println("Plugin replied: " + response.getBody());
+//		Payload payload = new Payload();
+//		payload.setBody("Sample input");
+//
+//		Payload response = Sender.sendPayload("127.0.0.1", 7070, payload);
+//
+//		System.out.println("Plugin replied: " + response.getBody());
 
 	}
 
