@@ -1,0 +1,12 @@
+routes:
+  - id: tcp-logger
+    pathPattern: /log/.*
+    protocol: TCP
+    host: 127.0.0.1
+    port: 9091
+
+  - id: http-mock
+    pathPattern: /api/.*
+    protocol: HTTP
+    host: httpbin.org
+    port: 80

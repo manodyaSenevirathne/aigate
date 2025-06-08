@@ -38,7 +38,13 @@ public class GatewayCoreFilter implements WebFilter {
 
         executor.executePreRequest(context);
         return chain.filter(exchange).doOnSuccess((v) -> {
+
+
+
             executor.executePostRequest(context);
+
+
+
         }).doOnError(error -> {
             executor.executeOnError( error, context);
         });
