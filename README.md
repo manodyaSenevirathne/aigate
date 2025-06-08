@@ -4,8 +4,8 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Java](https://img.shields.io/badge/java-17%2B-orange)
 ![Python](https://img.shields.io/badge/python-3.8%2B-yellow)
-![Issues](https://img.shields.io/github/issues/your-username/aigate-project)
-![Last Commit](https://img.shields.io/github/last-commit/your-username/aigate-project)
+![Issues](https://img.shields.io/github/issues/manodyaSenevirathne/aigate)
+![Last Commit](https://img.shields.io/github/last-commit/manodyaSenevirathne/aigate)
 
 
 AI-Gate++ is a modern, extensible API Gateway designed for high-performance, pluggable traffic management and AI-driven security. It features a Spring Boot-based core, a plugin system (supporting both in-process and external plugins), and an integrated anomaly detection engine using an autoencoder trained on the KDD99 dataset.
